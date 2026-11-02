@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
-  <!-- Phone numbers must look like 928-638-7496 -->
+  <!-- Phone is any string, e.g. 928-638-7496 -->
   <xs:simpleType name="PhoneType">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="\d{3}-\d{3}-\d{4}" />
-    </xs:restriction>
+    <xs:restriction base="xs:string" />
   </xs:simpleType>
 
-  <!-- Rating is optional and must be between 0 and 5 -->
+  <!-- Rating is an optional decimal, e.g. 4.9 -->
   <xs:simpleType name="RatingType">
-    <xs:restriction base="xs:decimal">
-      <xs:minInclusive value="0" />
-      <xs:maxInclusive value="5" />
-    </xs:restriction>
+    <xs:restriction base="xs:decimal" />
   </xs:simpleType>
 
   <!-- Address: Number, Street, City, State, Zip (in this order), plus a required NearestAirport attribute -->
